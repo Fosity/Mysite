@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css"/>
+</head>
+<body>
+<div style="width: 900px;margin: 0 auto">
+	<table class="table table-bordered table-hover" id="table_change">
+		<h1>用户管理</h1>
+		{% include 'con_search.html' %}
+		{% include 'con_button.html' %}
+		{% include 'con_Modal.html' %}
+	</table>
+</div>
+
+</body>
+<script src="/static/jquery-3.2.1.js"></script>
+<script src="/static/con_list.js"></script>
+<script src="/static/plugins/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script>
+    $.showTable('/User/usersinfo_json/');
+    $('#inputElement').click(function () {
+		  var form=document.getElementById('form1');
+		  var formData=new FormData(form);
+        		$.ajax({
+        			url:'/User/usersinfo_json/',
+        			type:'POST',
+        			data:formData,
+        			dataType:'JSON',
+					processData: false,
+					contentType: false,
+        			success:function (arg){
+        			    location.reload()
+                    }
+        		})
+    })
+</script>
+</html>

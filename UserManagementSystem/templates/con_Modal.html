@@ -1,0 +1,36 @@
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">用户添加</h4>
+			</div>
+			<form action="/User/usersinfo_json/" method="POST" id="form1">
+				<div class="modal-body">
+					<div class="form-group">
+						<label>姓名</label>
+						{{ form_list.username }}{{ form_list.errors.username.0 }}
+					</div>
+					<div class="form-group">
+						<label>密码</label>
+						{{ form_list.password }}{{ form_list.errors.password.0 }}
+					</div>
+					<div class="form-group">
+						<label>邮箱</label>
+						{{ form_list.email }}{{ form_list.errors.password.0 }}
+					</div>
+					<div class="form-group">
+						<label>组</label>
+						{{ form_list.group }}{{ form_list.errors.password.0 }}
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" id="inputElement">Save changes</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
